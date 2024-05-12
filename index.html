@@ -1,32 +1,4 @@
 <!DOCTYPE html>
-<head>
-<script>
-
-
-function myFunction() {
-    var input = document.getElementById("myText").value;
-	
-    if(stringToHash(input) == true) document.getElementById("demo").innerHTML = input ++ " is a pooran";
-	else document.getElementById("demo").innerHTML = input ++ " is not a pooran";
-}
-
-function stringToHash(string) {
-
-    let hash = 0;
-
-    if (string.length == 0) return hash;
-
-    for (i = 0; i < string.length; i++) {
-        char = string.charCodeAt(i);
-        hash = ((hash << 5) - hash) + char;
-        hash = hash & hash;
-    }
-
-    return ((stringToHash(gfg) % 2) == 0);
-}
-
-</script>
-</head>
 <html>
 <body>
 
@@ -40,13 +12,12 @@ function stringToHash(string) {
 
 <p id="demo"></p>
 
-
+<script>
+function myFunction() {
+  var x = document.getElementById("myText").value;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
