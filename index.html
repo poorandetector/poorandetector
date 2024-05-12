@@ -3,8 +3,11 @@
 <body>
 
 <h2>Demo JavaScript in Body</h2>
-
-<p id="demo">A Paragraph.</p>
+<form id="form" onsubmit="return false;">
+    <input style="position:absolute; top:80%; left:5%; width:40%;" type="text" id="userInput" />
+    <input style="position:absolute; top:50%; left:5%; width:40%;" type="submit" onclick="othername();" />
+</form>
+<p id="demo"></p>
 
 <button type="button" onclick="myFunction()">Try it</button>
 
@@ -12,6 +15,30 @@
 function myFunction() {
   document.getElementById("demo").innerHTML = "Paragraph changed.";
 }
+function othername() {
+    var input = document.getElementById("userInput").value;
+    if(stringToHash(input) == true) document.getElementById("demo").innerHTML = input ++ " is a pooran";
+	else document.getElementById("demo").innerHTML = input ++ " is not a pooran";
+}
+
+function stringToHash(string) {
+
+    let hash = 0;
+
+    if (string.length == 0) return hash;
+
+    for (i = 0; i < string.length; i++) {
+        char = string.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+    }
+
+    return ((stringToHash(gfg) % 2) == 0);
+}
+
+// String printing in hash
+let gfg = "Digil"
+console.log((stringToHash(gfg) % 2) == 0);
 </script>
 
 </body>
