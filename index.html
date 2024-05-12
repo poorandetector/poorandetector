@@ -2,21 +2,21 @@
 <html>
 <body>
 
-<h2>Demo JavaScript in Body</h2>
-<form id="form" onsubmit="return false;">
-    <input style="position:absolute; top:80%; left:5%; width:40%;" type="text" id="userInput" />
-    <input style="position:absolute; top:50%; left:5%; width:40%;" type="submit" onclick="othername();" />
-</form>
+<h3>A demonstration of how to access a Text Field</h3>
+
+<input type="text" id="myText" value="Some text...">
+
+<p>Click the "Try it" button to get the text in the text field.</p>
+
+<button onclick="myFunction()">Try it</button>
+
 <p id="demo"></p>
 
-<button type="button" onclick="myFunction()">Try it</button>
-
 <script>
+
+
 function myFunction() {
-  document.getElementById("demo").innerHTML = "Paragraph changed.";
-}
-function othername() {
-    var input = document.getElementById("userInput").value;
+    var input = document.getElementById("myText").value;
     if(stringToHash(input) == true) document.getElementById("demo").innerHTML = input ++ " is a pooran";
 	else document.getElementById("demo").innerHTML = input ++ " is not a pooran";
 }
@@ -36,10 +36,13 @@ function stringToHash(string) {
     return ((stringToHash(gfg) % 2) == 0);
 }
 
-// String printing in hash
-let gfg = "Digil"
-console.log((stringToHash(gfg) % 2) == 0);
 </script>
 
 </body>
-</html> 
+</html>
+
+
+
+
+
+
