@@ -2,13 +2,13 @@
 <html>
 <body>
 
-<h3>A demonstration of how to access a Text Field</h3>
+<h3>Enter the name of the person below to check if he is pooran:</h3>
 
 <input type="text" id="myText" value="Some text...">
 
-<p>Click the "Try it" button to get the text in the text field.</p>
+<p>Click the "Run check" button to get the text in the text field.</p>
 
-<button onclick="myFunction()">Try it</button>
+<button onclick="myFunction()">Run check</button>
 
 <p id="demo"></p>
 
@@ -16,7 +16,7 @@
 function myFunction() {
   var x = document.getElementById("myText").value;
   
-if(stringToHash(x) == true) document.getElementById("demo").innerHTML = x + " is a pooran";
+if(stringToHash(x.toLowerCase()) == true) document.getElementById("demo").innerHTML = x + " is a pooran";
 	else document.getElementById("demo").innerHTML = x + " is not a pooran";
 }
 
