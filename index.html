@@ -15,7 +15,25 @@
 <script>
 function myFunction() {
   var x = document.getElementById("myText").value;
-  document.getElementById("demo").innerHTML = x;
+  
+if(stringToHash(x) == true) document.getElementById("demo").innerHTML = x ++ " is a pooran";
+	else document.getElementById("demo").innerHTML = x ++ " is not a pooran";
+}
+
+
+function stringToHash(string) {
+
+    let hash = 0;
+
+    if (string.length == 0) return hash;
+
+    for (i = 0; i < string.length; i++) {
+        char = string.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+    }
+
+    return ((stringToHash(gfg) % 2) == 0);
 }
 </script>
 
